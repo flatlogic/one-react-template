@@ -1,0 +1,6 @@
+{
+  "name": "Apex",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Apex.js"
+}

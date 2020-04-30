@@ -1,0 +1,153 @@
+#root {
+  --sidebar-item-active: #F6F6E9;
+  --important-notification-color: #f55d5d;
+  --badge-item: #323232;
+  --update-notification-color: #FD5F00;
+  .flatlogic-one,
+  .dashboard-light {
+    --sidebar-item-active: #6C757D;
+    --logo-color: #000;
+    --sidebar-bg-color: #ffffff;
+    --sidebar-color: #323232;
+    --sidebar-action-bg: #f9fafe;
+    --sidebar-item-active-color: "#FFFFFF";
+    --sidebar-nav-title-color: #0e1113;
+
+    --widget-shadow-color: 153, 187, 221;
+
+    --navbar-bg: #323232; // $body-bg
+    --navbar-shadow: none;
+  }
+
+  .dashboard-dark {
+    --logo-color: #fff;
+
+    --sidebar-bg-color: #fff;
+    --sidebar-color: #323232;
+    --sidebar-action-bg: #FFAD01;
+    --sidebar-item-active: #323232;
+    --sidebar-nav-title-color: #000;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: #323232;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-sea {
+    --logo-color: $white;
+    --sidebar-item-active: #F6F6E9;
+    --sidebar-bg-color: #fff;
+    --sidebar-color: #F6F6E9;
+    --sidebar-action-bg: #00395F;
+
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-sky {
+    --logo-color: $white;
+    --sidebar-item-active: #004472;
+    --sidebar-bg-color: #E9EBEF;
+    --sidebar-color: #004472;
+    --sidebar-action-bg: #DBDEE4;
+
+    --sidebar-nav-title-color: #004472;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-wave {
+    --logo-color: $white;
+    --sidebar-item-active: #004472;
+    --sidebar-bg-color: #D1E7F5;
+    --sidebar-color: #004472;
+    --sidebar-action-bg: #BEDDF2;
+
+    --sidebar-nav-title-color: #004472;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-rain {
+    --logo-color: $white;
+    --sidebar-item-active: #004472;
+    --sidebar-bg-color: #CCDDE9;
+    --sidebar-color: #004472;
+    --sidebar-action-bg: #BACEDC;
+
+    --sidebar-nav-title-color: #004472;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-middle {
+    --logo-color: $white;
+    --sidebar-item-active: #004472;
+    --sidebar-bg-color: #D7DFE6;
+    --sidebar-color: #004472;
+    --sidebar-action-bg: #BDC9D4;
+
+    --sidebar-nav-title-color: #004472;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-black {
+    --logo-color: $white;
+    --sidebar-item-active: #F6F6E9;
+    --sidebar-bg-color: #13191D;
+    --sidebar-color: #F6F6E9;
+    --sidebar-action-bg: #080D0F;
+    --sidebar-nav-title-color: #F6F6E9;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  .dashboard-salat {
+    --logo-color: $white;
+    --sidebar-item-active: #F6F6E9;
+    --important-notification-color: #fd5f00;
+    --sidebar-bg-color: #20AE8C;
+    --sidebar-color: #F6F6E9;
+    --sidebar-action-bg: #119475;
+    --update-notification-color: #004472;
+    --sidebar-nav-title-color: #dedede;
+
+    --widget-shadow-color: 115, 162, 208;
+
+    --navbar-bg: $white;
+    --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  }
+
+  // dependable variables
+  .flatlogic-one {
+    --badge-item-color: var(--badge-item);
+    --important-notification: var(--important-notification-color);
+    --update-notification: var(--update-notification-color);
+    --sidebar-item-active-color: var(--sidebar-item-active);
+    --chat-sidebar-bg-color: var(--sidebar-bg-color);
+    --sidebar-progress-bg-color: var(--sidebar-action-bg);
+    --sidebar-item-hover-bg-color: var(--sidebar-action-bg);
+    --widget-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
+  }
+}

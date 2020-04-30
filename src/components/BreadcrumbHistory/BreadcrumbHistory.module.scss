@@ -1,0 +1,24 @@
+@import '../../styles/app';
+
+.customDropdown {
+  background: #fff;
+  margin-right: 32px;
+  box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.25) !important;
+}
+
+.btnShadow {
+  box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.25) !important;
+  text-transform: initial;
+}
+
+.dashboardButtons {
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    align-items: stretch !important;
+    margin-bottom: 18px;
+    .customDropdown {
+      margin-right: 0 !important;
+      margin-bottom: 18px;
+    }
+  }
+}

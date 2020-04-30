@@ -1,0 +1,10 @@
+@import "../../styles/app";
+
+td {
+  vertical-align: middle !important;
+}
+.table-bordered th {
+  background: $blue;
+  color: $gray-light;
+  border: none;
+}

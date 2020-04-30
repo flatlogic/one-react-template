@@ -1,0 +1,67 @@
+@import '../../styles/app';
+
+.root {
+  .dashboardBlock {
+    @media (min-width: 1170px) and (max-width: 1280px) {
+      display: none;
+    }
+  }
+  .pieElements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &Danger {
+      border-top: 3px solid theme-color("danger")
+    }
+    &Warning {
+      border-top: 3px solid theme-color("warning")
+    }
+    &Black {
+      border-top: 3px solid #323232
+    }
+    p {
+      color: rgba(#323232, .6);
+      white-space: nowrap;
+    }
+  }
+  :global {
+    .post-comments footer {
+      margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+      padding: $widget-padding-vertical $widget-padding-horizontal;
+    }
+
+    .stat-item .name {
+      margin-top: 10px;
+    }
+  }
+  h5 {
+    color: rgba(#323232, .6)
+  }
+  .dashboardImg {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 40%;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      position: static;
+      margin-bottom: -28px;
+    }
+    }
+  .row {
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.table {
+  :global(.table.table-sm) {
+    td {
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+  }
+}

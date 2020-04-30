@@ -1,0 +1,57 @@
+@import '../../styles/app';
+
+.errorPage {
+  height: 100vh;
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-height: 80%;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}
+
+.errorContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.errorBtn {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.errorCode {
+  margin: 20px;
+  font-size: 80px;
+  font-weight: $font-weight-normal;
+  color: $blue;
+
+  @include media-breakpoint-up(md) {
+    font-size: 180px;
+  }
+}
+
+.errorInfo {
+  font-size: 140px;
+}
+
+.errorHelp {
+  font-size: 44px;
+  width: 390px;
+}
+
+.pageFooter {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: $font-size-mini;
+  color: $text-muted;
+  text-align: center;
+}
