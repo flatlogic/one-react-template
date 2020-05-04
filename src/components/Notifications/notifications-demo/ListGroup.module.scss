@@ -5,6 +5,10 @@
   height: 320px;
   overflow-y: scroll;
 
+  &Account {
+    height: auto;
+  }
+
   .listGroupItem:first-child {
     border: none;
   }
@@ -13,6 +17,45 @@
     font-size: 12px;
     font-weight: 600;
     padding: 15px 15px 0 15px;
+  }
+  &Title {
+    padding: 10px 15px 0 15px;
+    margin-bottom: -5px;
+  }
+  &TitleAccount {
+    padding: 10px 15px 0 25px;
+    margin-bottom: -5px;
+  }
+  &Subtitle {
+    padding: 5px 15px 0 15px;
+    margin-bottom: -5px;
+    font-size: 12px;
+    color: theme-color("warning")
+  }
+  &SubtitleAccount {
+    padding: 5px 15px 0 25px;
+    margin-bottom: -5px;
+    font-size: 12px;
+    color: theme-color("warning")
+  }
+  .messagesBadge {
+    background-color: rgba(255, 234, 206, 0.51);
+    border: 1px solid #FFAD01;
+    color: #323232;
+    padding: 0.2em 0.4em;
+    font-size: 10px
+  }
+  .seeMore {
+    padding: 0 15px 0 15px;
+    color: theme-color("warning");
+    font-weight: $font-weight-base;
+    display: inline-block;
+    font-size: 14px;
+  }
+  .seeMoreBlock {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 
@@ -26,6 +69,19 @@
   display: block;
   font-size: 14px;
   font-weight: 300;
+
+  &Account {
+    border: 0;
+    transition: background-color 0.15s ease-in-out;
+    text-decoration: none;
+    color: #323232;
+    border-left: none;
+    border-right: none;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px 25px 15px 25px !important;
+  }
 
   :global .progress {
     transition: background 0.15s ease-in-out;

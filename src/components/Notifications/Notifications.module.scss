@@ -5,6 +5,12 @@
     width: 333px;
   }
 
+  &Account {
+    @include media-breakpoint-up(md) {
+      width: 178px;
+    }
+  }
+
   height: 100%;
   border: none;
 }

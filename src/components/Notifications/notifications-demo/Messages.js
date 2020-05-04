@@ -1,75 +1,124 @@
-import React from 'react';
-import {
-  ListGroup,
-  ListGroupItem,
-} from 'reactstrap';
+import React from "react";
+import { Col, ListGroup, ListGroupItem, Row, Badge } from "reactstrap";
 
-import a1 from '../../../images/people/a1.jpg';
-import a2 from '../../../images/people/a2.jpg';
-import a4 from '../../../images/people/a4.jpg';
-import a6 from '../../../images/people/a6.jpg';
-import avatar from '../../../images/avatar.png';
+import s from "./ListGroup.module.scss";
 
-import s from './ListGroup.module.scss'; // eslint-disable-line
+import n1 from "../../../images/people/n1.svg";
+import n2 from "../../../images/people/n2.svg";
+import n3 from "../../../images/people/n3.svg";
+import n4 from "../../../images/people/n4.svg";
+import arrowRight from "../../../images/arrow-right.svg";
 
 class MessagesDemo extends React.Component {
   render() {
     return (
-      <ListGroup className={[s.listGroup, 'thin-scroll'].join(' ')}>
-        <ListGroupItem className={[s.listGroupItem, 'bg-warning-light'].join(' ')}>
-          <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
-            <img className="rounded-circle" src={a2} alt="..." />
-            <i className="status status-bottom bg-success" />
+      <ListGroup className={[s.listGroup, "thin-scroll"].join(" ")}>
+        <p className={`${s.listGroupTitle}`}>New Messages</p>
+        <p className={`${s.listGroupSubtitle}`}>5 new messages</p>
+        <p className={`${s.listGroupTime} mb-0`}>Today</p>
+        <ListGroupItem className={s.listGroupItem}>
+          <span className={[s.notificationIcon].join(" ")}>
+            <img className="rounded-circle" src={n1} alt="..." />
           </span>
-          <time className="text-link help float-right">10 sec ago</time>
-          <h6 className="m-0 fw-bold mb-1">Chris Gray</h6>
-          <p className="deemphasize text-ellipsis m-0">Hey! What&apos;s up? So many times since we</p>
+          <Row noGutters>
+            <Col sm={"10"}>
+              <div className="m-0 overflow-hidden">
+                <p className={"fw-semi-bold mb-0"}>Jim Tomson</p> Hey! How is it
+                going?
+              </div>
+            </Col>
+            <Col
+              sm={"2"}
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <Badge pill className={`${s.messagesBadge}`}>
+                1
+              </Badge>
+            </Col>
+          </Row>
         </ListGroupItem>
         <ListGroupItem className={s.listGroupItem}>
-          <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
-            <img className="rounded-circle" src={avatar} alt="..." />
-            <i className="status status-bottom bg-success" />
+          <span className={[s.notificationIcon].join(" ")}>
+            <img className="rounded-circle" src={n2} alt="..." />
           </span>
-          <time className="text-link help float-right">2 min ago</time>
-          <h6 className="m-0 mb-1">Jamey Brownlow</h6>
-          <p className="deemphasize text-ellipsis m-0">Good news coming tonight. Seems they agreed to proceed</p>
+          <Row noGutters>
+            <Col sm={"10"}>
+              <div className="m-0 overflow-hidden">
+                <p className={"fw-semi-bold mb-0"}>Elena Bureeva</p> Good news!
+              </div>
+            </Col>
+            <Col
+              sm={"2"}
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <Badge pill className={`${s.messagesBadge}`}>
+                2
+              </Badge>
+            </Col>
+          </Row>
+        </ListGroupItem>
+        <p className={`${s.listGroupTime} mb-0`}>Yesterday</p>
+        <ListGroupItem className={s.listGroupItem}>
+          <span className={[s.notificationIcon].join(" ")}>
+            <img className="rounded-circle" src={n3} alt="..." />
+          </span>
+          <Row noGutters>
+            <Col sm={"10"}>
+              <div className="m-0 overflow-hidden">
+                <p className={"fw-semi-bold mb-0"}>Jane Tomson</p> I want to
+                create new admin template ...
+              </div>
+            </Col>
+            <Col
+              sm={"2"}
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <Badge pill className={`${s.messagesBadge}`}>
+                1
+              </Badge>
+            </Col>
+          </Row>
         </ListGroupItem>
         <ListGroupItem className={s.listGroupItem}>
-          <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
-            <img className="rounded-circle" src={a1} alt="..." />
-            <i className="status status-bottom bg-warning" />
+          <span className={[s.notificationIcon].join(" ")}>
+            <img className="rounded-circle" src={n4} alt="..." />
           </span>
-          <time className="text-link help float-right">9 min ago</time>
-          <h6 className="m-0 mb-1">Livia Walsh</h6>
-          <p className="deemphasize text-ellipsis m-0">Check out my latest email plz!</p>
+          <Row noGutters>
+            <Col sm={"10"}>
+              <div className="m-0 overflow-hidden">
+                <p className={"fw-semi-bold mb-0"}>Anna Bureeva</p> Good news!
+              </div>
+            </Col>
+            <Col
+              sm={"2"}
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <Badge pill className={`${s.messagesBadge}`}>
+                1
+              </Badge>
+            </Col>
+          </Row>
         </ListGroupItem>
-        <ListGroupItem className={s.listGroupItem}>
-          <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
-            <img className="rounded-circle" src={avatar} alt="..." />
-            <i className="status status-bottom bg-danger" />
-          </span>
-          <time className="text-link help float-right">12:56 AM</time>
-          <h6 className="m-0 mb-1">Jaron Fitzroy</h6>
-          <p className="deemphasize text-ellipsis m-0">What about summer break?</p>
-        </ListGroupItem>
-        <ListGroupItem className={s.listGroupItem}>
-          <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
-            <img className="rounded-circle" src={a4} alt="..." />
-            <i className="status status-bottom bg-gray-light" />
-          </span>
-          <time className="text-link help float-right">Yesterday</time>
-          <h6 className="m-0 mb-1">Mike Lewis</h6>
-          <p className="deemphasize text-ellipsis m-0">Just ain&apos;t sure about the weekend now. 90% I&apos;ll make it.</p>
-        </ListGroupItem>
-        <ListGroupItem className={s.listGroupItem}>
-          <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
-            <img className="rounded-circle" src={a6} alt="..." />
-            <i className="status status-bottom bg-success" />
-          </span>
-          <time className="text-link help float-right">Apr 23</time>
-          <h6 className="m-0 mb-1">Freda Edison</h6>
-          <p className="deemphasize text-ellipsis m-0">Hey what&apos;s up? Me and Monica going for a lunch somewhere. Wanna join?</p>
-        </ListGroupItem>
+        <div className={s.seeMoreBlock}>
+          <p className={`${s.seeMore} mb-3`}>See more</p>
+          <img src={arrowRight} alt="arrow" className={"mb-3 mr-3"} />
+        </div>
       </ListGroup>
     );
   }

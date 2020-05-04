@@ -1,10 +1,11 @@
-import React from 'react';
-import NotificationsDemo from './notifications-demo/Notifications';
-import NewNotificationsDemo from './notifications-demo/NewNotifications';
-import MessagesDemo from './notifications-demo/Messages';
-import ProgressDemo from './notifications-demo/Progress';
+import React from "react";
+import NotificationsDemo from "./notifications-demo/Notifications";
+import NewNotificationsDemo from "./notifications-demo/NewNotifications";
+import MessagesDemo from "./notifications-demo/Messages";
+import ProgressDemo from "./notifications-demo/Progress";
+import AccountDemo from './notifications-demo/Account'
 
-import s from './Notifications.module.scss';
+import s from "./Notifications.module.scss";
 
 class Notifications extends React.Component {
   constructor(props) {
@@ -16,6 +17,10 @@ class Notifications extends React.Component {
       isLoad: false,
     };
   }
+
+  static defaultProps = {
+    notificationsTabSelected: 1,
+  };
 
   changeNotificationsTab(tab) {
     this.setState({
@@ -31,7 +36,7 @@ class Notifications extends React.Component {
 
     setTimeout(() => {
       this.setState({
-        newNotifications: (<NewNotificationsDemo />),
+        newNotifications: <NewNotificationsDemo />,
         isLoad: false,
       });
     }, 1500);
@@ -40,22 +45,25 @@ class Notifications extends React.Component {
   render() {
     let notificationsTab;
 
-    switch (this.state.notificationsTabSelected) {
+    switch (this.props.notificationsTabSelected) {
       case 1:
-        notificationsTab = (<NotificationsDemo />);
+        notificationsTab = <NotificationsDemo />;
         break;
       case 2:
-        notificationsTab = (<MessagesDemo />);
+        notificationsTab = <MessagesDemo />;
         break;
       case 3:
-        notificationsTab = (<ProgressDemo />);
+        notificationsTab = <ProgressDemo />;
+        break;
+      case 4:
+        notificationsTab = <AccountDemo />;
         break;
       default:
-        notificationsTab = (<NotificationsDemo />);
+        notificationsTab = <NotificationsDemo />;
         break;
     }
     return (
-      <section className={`${s.notifications} card navbar-notifications`}>
+      <section className={`${this.props.notificationsTabSelected === 4 ? s.notificationsAccount : s.notifications} card navbar-notifications`}>
         {this.state.newNotifications || notificationsTab}
       </section>
     );

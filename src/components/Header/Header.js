@@ -31,7 +31,8 @@ import userAvatar from "../../images/userAvatar.svg";
 import search from "../../images/search.svg";
 import notify from "../../images/notify.svg";
 import lightNotify from "../../images/light-notify.svg";
-import email from "../../images/email.svg";
+import messages from "../../images/messages.svg";
+import lightMessages from "../../images/messages-filled.svg";
 
 import s from "./Header.module.scss"; // eslint-disable-line css-modules/no-unused-class
 
@@ -51,12 +52,16 @@ class Header extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
     this.switchSidebar = this.switchSidebar.bind(this);
     this.toggleNotifications = this.toggleNotifications.bind(this);
+    this.toggleMessages = this.toggleMessages.bind(this);
+    this.toggleAccount = this.toggleAccount.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
     this.doLogout = this.doLogout.bind(this);
 
     this.state = {
       menuOpen: false,
       notificationsOpen: false,
+      messagesOpen: false,
+      accountOpen: false,
       notificationsTabSelected: 1,
       focus: false,
       showNewMessage: false,
@@ -72,6 +77,18 @@ class Header extends React.Component {
   toggleNotifications() {
     this.setState({
       notificationsOpen: !this.state.notificationsOpen,
+    });
+  }
+
+  toggleMessages() {
+    this.setState({
+      messagesOpen: !this.state.messagesOpen,
+    });
+  }
+
+  toggleAccount() {
+    this.setState({
+      accountOpen: !this.state.accountOpen,
     });
   }
 
@@ -128,49 +145,49 @@ class Header extends React.Component {
       >
         <NavItem className={`${s.toggleSidebarNav} d-md-none d-flex mr-2`}>
           <NavLink
-              className="ml-2 pr-4 pl-3"
-              id="toggleSidebar"
-              onClick={this.toggleSidebar}
+            className="ml-2 pr-4 pl-3"
+            id="toggleSidebar"
+            onClick={this.toggleSidebar}
           >
             <i
-                className={`la la-bars ${
-                    chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""
-                }`}
-                style={{color: "#000"}}
+              className={`la la-bars ${
+                chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""
+              }`}
+              style={{ color: "#000" }}
             />
           </NavLink>
         </NavItem>
-        <NavItem className={'d-md-down-block d-md-none ml-auto'}>
+        <NavItem className={"d-md-down-block d-md-none ml-auto"}>
           <img
-              src={search}
-              alt="search"
-              width="24px"
-              height="23px"
-              style={{ marginRight: 12 }}
+            src={search}
+            alt="search"
+            width="24px"
+            height="23px"
+            style={{ marginRight: 12 }}
           />
         </NavItem>
         <Form className={`ml-auto d-md-down-none`} inline>
-            <InputGroup
-              onFocus={this.toggleFocus}
-              onBlur={this.toggleFocus}
-              className={`${cx("input-group-no-border", { focus: !!focus })}`}
-            >
-              <Input
-                id="search-input"
-                placeholder="Search"
-                className={`${cx({ focus: !!focus }, s.headerSearchInput)}`}
-                style={{ borderBottomLeftRadius: 4, borderTopLeftRadius: 4 }}
+          <InputGroup
+            onFocus={this.toggleFocus}
+            onBlur={this.toggleFocus}
+            className={`${cx("input-group-no-border", { focus: !!focus })}`}
+          >
+            <Input
+              id="search-input"
+              placeholder="Search"
+              className={`${cx({ focus: !!focus }, s.headerSearchInput)}`}
+              style={{ borderBottomLeftRadius: 4, borderTopLeftRadius: 4 }}
+            />
+            <InputGroupAddon addonType={"prepend"}>
+              <img
+                src={search}
+                alt="search"
+                width="24px"
+                height="23px"
+                style={{ marginRight: 12 }}
               />
-              <InputGroupAddon addonType={"prepend"}>
-                <img
-                  src={search}
-                  alt="search"
-                  width="24px"
-                  height="23px"
-                  style={{ marginRight: 12 }}
-                />
-              </InputGroupAddon>
-            </InputGroup>
+            </InputGroupAddon>
+          </InputGroup>
         </Form>
         <Nav>
           <Dropdown
@@ -211,9 +228,10 @@ class Header extends React.Component {
             </DropdownMenu>
           </Dropdown>
           <Dropdown
+            isOpen={this.state.messagesOpen}
+            toggle={this.toggleMessages}
             nav
             className={`${s.notificationsMenu}`}
-            toggle={() => {}}
           >
             <DropdownToggle
               nav
@@ -222,21 +240,36 @@ class Header extends React.Component {
               }`}
               style={{ marginLeft: 20 }}
             >
-              <img src={email} alt="email" width="24px" height={"24px"} />
-              <i className={`fa fa-circle text-success mb-2 ${s.emailStyle}`} />
+              {this.state.messagesOpen ? (
+                <img
+                  src={lightMessages}
+                  alt="notify"
+                  width="24px"
+                  height={"24px"}
+                />
+              ) : (
+                <>
+                  <img
+                    src={messages}
+                    alt="email"
+                    width="24px"
+                    height={"24px"}
+                  />
+                  <i
+                    className={`fa fa-circle text-success mb-2 ${s.emailStyle}`}
+                  />
+                </>
+              )}
             </DropdownToggle>
             <DropdownMenu
               right
               className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}
             >
-              <Notifications />
+              <Notifications notificationsTabSelected={2} />
             </DropdownMenu>
           </Dropdown>
-          <Dropdown
-            nav
-            className={`${s.notificationsMenu}`}
-            toggle={() => {}}
-          >
+          <Dropdown nav className={`${s.notificationsMenu}`} isOpen={this.state.accountOpen}
+                    toggle={this.toggleAccount}>
             <DropdownToggle
               nav
               className={`${
@@ -254,6 +287,12 @@ class Header extends React.Component {
                 )}
               </span>
             </DropdownToggle>
+            <DropdownMenu
+                right
+                className={`${s.notificationsWrapper} py-0 animated animated-fast fadeInUp`}
+            >
+              <Notifications notificationsTabSelected={4} />
+            </DropdownMenu>
           </Dropdown>
         </Nav>
       </Navbar>
