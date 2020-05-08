@@ -12,13 +12,13 @@
   min-height: 100vh;
   display: flex;
   margin-left: 284px;
+  left: 0;
   flex-direction: column;
   right: 0;
   transition: left $sidebar-transition-time ease-in-out, margin-left $sidebar-transition-time ease-in-out;
 
   @media (max-width: breakpoint-max(sm)) {
     margin-left: 0;
-    left: 0;
   }
 }
 
