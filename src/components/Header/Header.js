@@ -141,7 +141,7 @@ class Header extends React.Component {
         className={`${s.root} d-print-none ${
           navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ""
         }`}
-        style={{ zIndex: !openUsersList ? 100 : 0 }}
+        style={{ zIndex: !openUsersList ? 100 : 0, backgroundColor: navbarColor }}
       >
         <NavItem className={`${s.toggleSidebarNav} d-md-none d-flex mr-2`}>
           <NavLink
@@ -150,9 +150,7 @@ class Header extends React.Component {
             onClick={this.toggleSidebar}
           >
             <i
-              className={`la la-bars ${
-                chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""
-              }`}
+              className={`la la-bars`}
               style={{ color: "#000" }}
             />
           </NavLink>
@@ -175,7 +173,7 @@ class Header extends React.Component {
             <Input
               id="search-input"
               placeholder="Search"
-              className={`${cx({ focus: !!focus }, s.headerSearchInput)}`}
+              className={`${cx({ focus: !!focus})} ${s.headerSearchInput}`}
               style={{ borderBottomLeftRadius: 4, borderTopLeftRadius: 4 }}
             />
             <InputGroupAddon addonType={"prepend"}>

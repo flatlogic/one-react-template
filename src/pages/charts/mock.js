@@ -1,11 +1,11 @@
 import config from './config';
 
 const colors = config.app.colors;
-const { info, danger, warning, success} = colors;
+const { warning } = colors;
 const chartColors = config.app.chartColors;
 const {axisColor} = chartColors;
 
-let columnColors = [info, success, warning, danger, '#9FDBE9', '#FFA983'];
+let columnColors = ['#4DC7DF', '#81D4BB', '#FEB04A', '#FF7769', '#FFA983', '#FFA983'];
 let lineColors = [warning, '#323232'];
 
 export const chartData = {
@@ -182,7 +182,7 @@ export const chartData = {
       legend: {
         show: false
       },
-      color: [warning, danger, success, info],
+      color: ['#FFBF69', '#323232', '#9FDBE9', '#FF7769'],
       series: [
         {
           name: 'Access source',
@@ -236,7 +236,7 @@ export const chartData = {
           color: axisColor
         }
       },
-      color: ['#323232', warning, success, danger, info],
+      color: ['#323232', '#FFBF69', '#FF7769', '#9FDBE9', '#81D4BB', '#FFA983'],
       singleAxis: {
         top: 50,
         bottom: 50,

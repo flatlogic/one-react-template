@@ -8,13 +8,17 @@
   flex-wrap: nowrap;
   transition: background-color .2s ease, margin .2s ease;
 
+  &Light {
+    box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
+  }
+
   .logo {
     color: var(--logo-color);
     font-size: 33px;
   }
 
   .toggleSidebarNav {
-    height: calc(100% + 14px);
+    height: calc(100% + 15px);
     background: #FEB049;
   }
 
@@ -64,7 +68,11 @@
 
     .form-control {
       background-color: #1E1E1E;
+      &-light {
+        background-color: #F0F0F0;
+      }
     }
+
 
     .input-group-prepend {
       background-color: #1E1E1E;
@@ -75,6 +83,9 @@
       justify-content: center;
       align-items: center;
       width: 35px;
+      &-light {
+        background-color: #F0F0F0;
+      }
     }
 
     .focus .input-group-prepend {
@@ -206,7 +217,11 @@
   &::placeholder {
     color: rgba(#DBDBDB, .5)
   }
+  &Light {
+    color: rgba(#6B6B6B, .5)
+  }
 }
+
 
 .chatNotificationInit {
   opacity: 1;

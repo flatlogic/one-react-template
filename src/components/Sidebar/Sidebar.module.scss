@@ -10,6 +10,7 @@
   //border-right: $sidebar-border;
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
+  transition: background-color .2s ease, margin .2s ease;
   @include scroll-bar($sidebar-scrollbar-bg);
 }
 
@@ -87,7 +88,7 @@
   margin: 35px 0 0px 32px;
   font-size: $font-size-larger;
   transition: opacity $sidebar-transition-time ease-in-out;
-  color: rgba(#323232, 0.5);
+  color: var(--sidebar-nav-title-color);
 
   @media (min-width: breakpoint-min(lg)) {
     opacity: 1;

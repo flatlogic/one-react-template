@@ -5,13 +5,13 @@
   --update-notification-color: #FD5F00;
   .flatlogic-one,
   .dashboard-light {
-    --sidebar-item-active: #6C757D;
-    --logo-color: #000;
+    --sidebar-item-active: #323232;
+    --logo-color: #fff;
     --sidebar-bg-color: #ffffff;
     --sidebar-color: #323232;
     --sidebar-action-bg: #f9fafe;
     --sidebar-item-active-color: "#FFFFFF";
-    --sidebar-nav-title-color: #0e1113;
+    --sidebar-nav-title-color: rgba(0,0,0, .5);
 
     --widget-shadow-color: 153, 187, 221;
 
@@ -22,11 +22,11 @@
   .dashboard-dark {
     --logo-color: #fff;
 
-    --sidebar-bg-color: #fff;
-    --sidebar-color: #323232;
+    --sidebar-bg-color: #323232;
+    --sidebar-color: #fff;
     --sidebar-action-bg: #FFAD01;
-    --sidebar-item-active: #323232;
-    --sidebar-nav-title-color: #000;
+    --sidebar-item-active: #fff;
+    --sidebar-nav-title-color: rgba(255,255,255, .5);
 
     --widget-shadow-color: 115, 162, 208;
 

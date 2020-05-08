@@ -259,7 +259,7 @@ small {
   font-family: $font-family-sans-serif;
   border-radius: 8px;
   border: none;
-  text-transform: uppercase;
+  text-transform: initial;
   &.dropdown-toggle {
     text-transform: initial;
   }

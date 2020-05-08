@@ -71,6 +71,7 @@
     "line-awesome": "github:icons8/line-awesome",
     "moment": "^2.22.2",
     "prettier": "^2.0.5",
+    "rc-color-picker": "^1.2.6",
     "rc-hammerjs": "^0.6.9",
     "react": "^16.5.2",
     "react-animate-height": "^2.0.15",

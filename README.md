@@ -1,4 +1,4 @@
-# 🤘 Flatlogic One React Template
+# 🤘 Flatlogic One React 
 
 Free and open-source admin dashboard template built with React and Bootstrap 4. Developed with ❤️ by [Flatlogic](https://flatlogic.com/). If you love our project please star ⭐️ our repo!
 

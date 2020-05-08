@@ -34,9 +34,9 @@ Object.freeze(NavbarTypes);
 Object.freeze(LayoutComponents);
 
 const defaultState = {
-  dashboardTheme: DashboardThemes.DARK,
-  sidebarColor: DashboardThemes.DARK,
-  navbarColor:  config.app.colors.light,
+  dashboardTheme: DashboardThemes.LIGHT,
+  sidebarColor: DashboardThemes.LIGHT,
+  navbarColor:  config.app.colors.dark,
   navbarType: NavbarTypes.STATIC,
   sidebarType: SidebarTypes.SOLID
 };
