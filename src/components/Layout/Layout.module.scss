@@ -11,15 +11,14 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  margin-left: 284px;
+  margin-left: $sidebar-width-open;
   flex-direction: column;
-  //left: $sidebar-width-open - $sidebar-width-closed;
   right: 0;
   transition: left $sidebar-transition-time ease-in-out, margin-left $sidebar-transition-time ease-in-out;
 
   @media (max-width: breakpoint-max(sm)) {
-    margin-left: 0;
-    //left: $sidebar-width-open;
+    left: $sidebar-width-open;
+    margin-left: 0px;
   }
 }
 

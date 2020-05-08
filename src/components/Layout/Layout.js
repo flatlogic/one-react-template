@@ -57,7 +57,7 @@ class Layout extends React.Component {
   }
 
   handleResize() {
-    if (window.innerWidth <= 768 && this.props.sidebarStatic) {
+    if (window.innerWidth <= 768) {
       this.props.dispatch(toggleSidebar());
     } else if (window.innerWidth >= 768) {
       this.props.dispatch(openSidebar());
@@ -83,7 +83,6 @@ class Layout extends React.Component {
       <div
         className={[
           s.root,
-          this.props.sidebarStatic ? `${s.sidebarStatic}` : "",
           !this.props.sidebarOpened ? s.sidebarClose : "",
           "flatlogic-one",
           `dashboard-${

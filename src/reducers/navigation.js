@@ -6,8 +6,8 @@ import {
 } from '../actions/navigation';
 
 const initialState = {
-  sidebarOpened: false,
-  sidebarStatic: true,
+  sidebarOpened: true,
+  sidebarStatic: false,
   activeItem: window.location.pathname,
 };
 
@@ -16,7 +16,7 @@ export default function runtime(state = initialState, action) {
     case TOGGLE_SIDEBAR:
       return {
         ...state,
-        sidebarStatic: !state.sidebarStatic,
+        sidebarOpened: !state.sidebarOpened,
       };
     case OPEN_SIDEBAR:
       return Object.assign({}, state, {
