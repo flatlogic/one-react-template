@@ -27,7 +27,7 @@ import {
   changeActiveSidebarItem,
 } from "../../actions/navigation";
 
-import userAvatar from "../../images/userAvatar.svg";
+import userAvatar from "../../images/userAvatar.png";
 import search from "../../images/search.svg";
 import notify from "../../images/notify.svg";
 import lightNotify from "../../images/light-notify.svg";

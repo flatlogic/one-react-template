@@ -17,7 +17,6 @@
   transition: left $sidebar-transition-time ease-in-out, margin-left $sidebar-transition-time ease-in-out;
 
   @media (max-width: breakpoint-max(sm)) {
-    left: $sidebar-width-open;
     margin-left: 0px;
   }
 }

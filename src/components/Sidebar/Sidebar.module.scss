@@ -1,7 +1,7 @@
 @import "../../styles/app";
 
 .root {
-  position: relative;
+  position: fixed;
   width: $sidebar-width-open;
   left: 0;
   top: 0;
@@ -28,12 +28,20 @@
   min-width: $sidebar-width-open;
   transition: width $sidebar-transition-time ease-in-out;
   background-color: var(--sidebar-bg-color);
+  z-index: 999;
+  @include media-breakpoint-down(sm) {
+    box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
+  }
 }
 
 .sidebarClose.sidebarWrapper {
-  width: $sidebar-width-closed;
   @include media-breakpoint-down(sm) {
-    width: 0;
+    min-width: 0;
+  }
+  & .root {
+    @include media-breakpoint-down(sm) {
+      width: 0;
+    }
   }
 }
 
@@ -59,7 +67,7 @@
 }
 
 .sidebarClose .logo {
-  width: 50px;
+  display: none;
 }
 
 .staticSidebar .logo {

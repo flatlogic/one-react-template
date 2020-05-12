@@ -3,9 +3,9 @@ import { ListGroup, ListGroupItem, Row, Col } from "reactstrap";
 
 import s from "./ListGroup.module.scss";
 
-import n1 from "../../../images/people/n1.svg";
-import n2 from "../../../images/people/n2.svg";
-import n3 from "../../../images/people/n3.svg";
+import n1 from "../../../images/people/n1.png";
+import n2 from "../../../images/people/n2.png";
+import n3 from "../../../images/people/n3.png";
 import arrowRight from "../../../images/arrow-right.svg";
 
 class NotificationsDemo extends React.Component {

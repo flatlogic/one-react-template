@@ -6,6 +6,12 @@
       display: none;
     }
   }
+  .dailyLineChart {
+    margin-top: -36px;
+    @include media-breakpoint-down(md) {
+      margin-top: 0;
+    }
+  }
   .pieElements {
     display: flex;
     flex-direction: column;

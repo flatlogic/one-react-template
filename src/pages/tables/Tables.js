@@ -150,7 +150,7 @@ class Tables extends React.Component {
               title={<p style={{ fontWeight: 700 }}>Table Styles</p>}
               customDropDown
             >
-              <Table>
+              <Table responsive>
                 <thead>
                   <tr className="fs-sm">
                     <th className="hidden-sm-down">#</th>
@@ -232,7 +232,7 @@ class Tables extends React.Component {
                     >
                       Clear
                     </DropdownToggle>
-                    <DropdownMenu>
+                    <DropdownMenu style={{marginRight: 120}}>
                       <DropdownItem>Clear</DropdownItem>
                       <DropdownItem>Move ...</DropdownItem>
                       <DropdownItem>Something else here</DropdownItem>

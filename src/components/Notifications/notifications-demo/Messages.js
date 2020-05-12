@@ -3,10 +3,10 @@ import { Col, ListGroup, ListGroupItem, Row, Badge } from "reactstrap";
 
 import s from "./ListGroup.module.scss";
 
-import n1 from "../../../images/people/n1.svg";
-import n2 from "../../../images/people/n2.svg";
-import n3 from "../../../images/people/n3.svg";
-import n4 from "../../../images/people/n4.svg";
+import n1 from "../../../images/people/n1.png";
+import n2 from "../../../images/people/n2.png";
+import n3 from "../../../images/people/n3.png";
+import n4 from "../../../images/people/n4.png";
 import arrowRight from "../../../images/arrow-right.svg";
 
 class MessagesDemo extends React.Component {

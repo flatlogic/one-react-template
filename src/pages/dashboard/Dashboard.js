@@ -16,11 +16,11 @@ import s from "./Dashboard.module.scss";
 import ApexChart from "react-apexcharts";
 
 //people
-import p1 from "../../images/people/p1.svg";
-import p2 from "../../images/people/p2.svg";
-import p3 from "../../images/people/p3.svg";
-import p4 from "../../images/people/p4.svg";
-import p5 from "../../images/userAvatar.svg";
+import p1 from "../../images/people/p1.png";
+import p2 from "../../images/people/p2.png";
+import p3 from "../../images/people/p3.png";
+import p4 from "../../images/people/p4.png";
+import p5 from "../../images/userAvatar.png";
 
 const orderValueOverride = {
   options: {
@@ -673,7 +673,7 @@ class Dashboard extends React.Component {
               }
               customDropDown
             >
-              <Row style={{ marginTop: -36 }}>
+              <Row className={s.dailyLineChart}>
                 <Col sm={12}>
                   <ApexChart
                     className="sparkline-chart"

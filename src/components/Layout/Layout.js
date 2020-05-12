@@ -44,6 +44,7 @@ class Layout extends React.Component {
     super(props);
 
     this.handleSwipe = this.handleSwipe.bind(this);
+    this.handleCloseSidebar = this.handleCloseSidebar.bind(this);
   }
 
   componentDidMount() {
@@ -61,6 +62,12 @@ class Layout extends React.Component {
       this.props.dispatch(toggleSidebar());
     } else if (window.innerWidth >= 768) {
       this.props.dispatch(openSidebar());
+    }
+  }
+
+  handleCloseSidebar(e) {
+    if (e.target.closest("#sidebar-drawer") == null && this.props.sidebarOpened && window.innerWidth <= 768) {
+      this.props.dispatch(toggleSidebar());
     }
   }
 
@@ -91,6 +98,7 @@ class Layout extends React.Component {
               : this.props.dashboardTheme
           }`,
         ].join(" ")}
+        onClick={e => this.handleCloseSidebar(e)}
       >
         <Sidebar />
         <div className={s.wrap}>
