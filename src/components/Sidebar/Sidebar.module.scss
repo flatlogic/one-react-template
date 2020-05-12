@@ -10,7 +10,7 @@
   //border-right: $sidebar-border;
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
-  transition: background-color .2s ease, margin .2s ease;
+  transition: background-color 0.2s ease, margin 0.2s ease;
   @include scroll-bar($sidebar-scrollbar-bg);
 }
 
@@ -29,9 +29,7 @@
   transition: width $sidebar-transition-time ease-in-out;
   background-color: var(--sidebar-bg-color);
   z-index: 999;
-  @include media-breakpoint-down(sm) {
-    box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
-  }
+  box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
 }
 
 .sidebarClose.sidebarWrapper {
