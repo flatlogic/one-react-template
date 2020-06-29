@@ -42,8 +42,6 @@ function mapStateToProps(store) {
     return {
         sidebarOpened: store.navigation.sidebarOpened,
         sidebarStatic: store.navigation.sidebarStatic,
-        navbarType: store.layout.navbarType,
-        navbarColor: store.layout.navbarColor,
     };
 }
 

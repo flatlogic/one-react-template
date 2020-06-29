@@ -96,7 +96,7 @@ class Register extends React.Component {
     }; // eslint-disable-line
 
     // cant access login page while logged in
-    if (Login.isAuthenticated(localStorage.getItem("token"))) {
+    if (Login.isAuthenticated(localStorage.getItem("authenticated"))) {
       return <Redirect to={from} />;
     }
 

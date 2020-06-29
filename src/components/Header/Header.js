@@ -16,10 +16,8 @@ import {
   NavLink,
 } from "reactstrap";
 import cx from "classnames";
-import { NavbarTypes } from "../../reducers/layout";
 import Notifications from "../Notifications";
 import { logoutUser } from "../../actions/user";
-import chroma from "chroma-js";
 import {
   toggleSidebar,
   openSidebar,
@@ -130,7 +128,7 @@ class Header extends React.Component {
   }
   render() {
     const { focus } = this.state;
-    const { navbarType, navbarColor, openUsersList } = this.props;
+    const { openUsersList } = this.props;
 
     const user = JSON.parse(localStorage.getItem("user") || {});
 
@@ -138,10 +136,8 @@ class Header extends React.Component {
 
     return (
       <Navbar
-        className={`${s.root} d-print-none ${
-          navbarType === NavbarTypes.FLOATING ? s.navbarFloatingType : ""
-        }`}
-        style={{ zIndex: !openUsersList ? 100 : 0, backgroundColor: navbarColor }}
+        className={`${s.root} d-print-none`}
+        style={{ zIndex: !openUsersList ? 100 : 0, backgroundColor: '#323232' }}
       >
         <NavItem className={`${s.toggleSidebarNav} d-md-none d-flex mr-2`}>
           <NavLink
@@ -197,9 +193,9 @@ class Header extends React.Component {
           >
             <DropdownToggle
               nav
-              className={`${
-                chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""
-              }`}
+              className={
+                "text-white"
+              }
               style={{ marginLeft: 20 }}
             >
               {this.state.notificationsOpen ? (
@@ -233,9 +229,7 @@ class Header extends React.Component {
           >
             <DropdownToggle
               nav
-              className={`${
-                chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""
-              }`}
+              className={"text-white"}
               style={{ marginLeft: 20 }}
             >
               {this.state.messagesOpen ? (
@@ -270,9 +264,9 @@ class Header extends React.Component {
                     toggle={this.toggleAccount}>
             <DropdownToggle
               nav
-              className={`${
-                chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""
-              }`}
+              className={
+                "text-white"
+              }
               style={{ marginLeft: 20 }}
             >
               <span
@@ -302,8 +296,6 @@ function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
-    navbarType: store.layout.navbarType,
-    navbarColor: store.layout.navbarColor,
   };
 }
 

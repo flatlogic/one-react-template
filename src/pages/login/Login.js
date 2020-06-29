@@ -4,10 +4,8 @@ import { withRouter, Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Alert, Button, Label, Input, FormGroup } from "reactstrap";
 import Widget from "../../components/Widget";
-import { loginUser, receiveToken } from "../../actions/user";
-import jwt from "jsonwebtoken";
+import { loginUser } from "../../actions/user";
 import signinImg from "../../images/signinImg.svg";
-import config from "../../config";
 import img1 from "../../images/Vector-1.svg";
 import img2 from "../../images/Vector-2.svg";
 import img3 from "../../images/Vector-3.svg";
@@ -19,12 +17,7 @@ class Login extends React.Component {
   };
 
   static isAuthenticated(token) {
-    // We check if app runs with backend mode
-    if (!config.isBackend && token) return true;
-    if (!token) return;
-    const date = new Date().getTime() / 1000;
-    const data = jwt.decode(token);
-    return date < data.exp;
+    if (token) return true;
   }
 
   constructor(props) {
@@ -66,26 +59,18 @@ class Login extends React.Component {
     this.props.dispatch(loginUser({ social: "microsoft" }));
   }
 
-  componentDidMount() {
-    const params = new URLSearchParams(this.props.location.search);
-    const token = params.get("token");
-    if (token) {
-      this.props.dispatch(receiveToken(token));
-    }
-  }
-
   signUp() {
     this.props.history.push("/register");
   }
 
   render() {
-    const { from } = this.props.location.state || {
-      from: { pathname: "/app" },
-    }; // eslint-disable-line
+    const { from } = this.props.location.state || { from: { pathname: '/app' } }; // eslint-disable-line
 
     // cant access login page while logged in
-    if (Login.isAuthenticated(localStorage.getItem("token"))) {
-      return <Redirect to={from} />;
+    if (Login.isAuthenticated(JSON.parse(localStorage.getItem('authenticated')))) {
+      return (
+          <Redirect to={from} />
+      );
     }
 
     return (

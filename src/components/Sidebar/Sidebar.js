@@ -260,7 +260,6 @@ function mapStateToProps(store) {
     alertsList: store.alerts.alertsList,
     activeItem: store.navigation.activeItem,
     navbarType: store.navigation.navbarType,
-    sidebarColor: store.layout.sidebarColor
   };
 }
 

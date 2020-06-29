@@ -15,7 +15,7 @@ import Register from '../pages/register';
 import { logoutUser } from '../actions/user';
 
 const PrivateRoute = ({dispatch, component, ...rest }) => {
-    if (!Login.isAuthenticated(localStorage.getItem('token'))) {
+    if (!Login.isAuthenticated(localStorage.getItem('authenticated'))) {
         dispatch(logoutUser());
         return (<Redirect to="/login"/>)
     } else {

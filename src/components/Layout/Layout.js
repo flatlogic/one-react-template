@@ -6,7 +6,6 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Hammer from "rc-hammerjs";
 
 import Dashboard from "../../pages/dashboard";
-import { SidebarTypes } from "../../reducers/layout";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import {
@@ -15,7 +14,6 @@ import {
   toggleSidebar,
 } from "../../actions/navigation";
 import s from "./Layout.module.scss";
-import { DashboardThemes } from "../../reducers/layout";
 import BreadcrumbHistory from "../BreadcrumbHistory";
 
 // pages
@@ -30,14 +28,12 @@ class Layout extends React.Component {
   static propTypes = {
     sidebarStatic: PropTypes.bool,
     sidebarOpened: PropTypes.bool,
-    dashboardTheme: PropTypes.string,
     dispatch: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     sidebarStatic: true,
     sidebarOpened: true,
-    dashboardTheme: DashboardThemes.DARK,
   };
 
   constructor(props) {
@@ -92,11 +88,7 @@ class Layout extends React.Component {
           s.root,
           !this.props.sidebarOpened ? s.sidebarClose : "",
           "flatlogic-one",
-          `dashboard-${
-            this.props.sidebarType === SidebarTypes.TRANSPARENT
-              ? "light"
-              : this.props.dashboardTheme
-          }`,
+          "dashboard-light",
         ].join(" ")}
         onClick={e => this.handleCloseSidebar(e)}
       >
@@ -148,8 +140,6 @@ function mapStateToProps(store) {
   return {
     sidebarOpened: store.navigation.sidebarOpened,
     sidebarStatic: store.navigation.sidebarStatic,
-    dashboardTheme: store.layout.dashboardTheme,
-    sidebarType: store.layout.sidebarType,
   };
 }
 
