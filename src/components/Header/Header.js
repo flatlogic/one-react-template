@@ -130,7 +130,7 @@ class Header extends React.Component {
     const { focus } = this.state;
     const { openUsersList } = this.props;
 
-    const user = JSON.parse(localStorage.getItem("user") || {});
+    const user = JSON.parse(localStorage.getItem("user") || '{}');
 
     const firstUserLetter = (user.name || user.email || "P")[0].toUpperCase();
 
