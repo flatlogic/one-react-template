@@ -31,6 +31,8 @@ import notify from "../../images/notify.svg";
 import lightNotify from "../../images/light-notify.svg";
 import messages from "../../images/messages.svg";
 import lightMessages from "../../images/messages-filled.svg";
+import arrowUnactive from '../../images/Arrow 6.svg'
+import arrowActive from '../../images/Arrow 5.svg'
 
 import s from "./Header.module.scss"; // eslint-disable-line css-modules/no-unused-class
 
@@ -54,6 +56,8 @@ class Header extends React.Component {
     this.toggleAccount = this.toggleAccount.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
     this.doLogout = this.doLogout.bind(this);
+    this.changeArrowImg = this.changeArrowImg.bind(this);
+    this.changeArrowImgOut = this.changeArrowImgOut.bind(this);
 
     this.state = {
       menuOpen: false,
@@ -65,6 +69,7 @@ class Header extends React.Component {
       showNewMessage: false,
       hideMessage: true,
       run: true,
+      arrowImg: arrowActive
     };
   }
 
@@ -92,6 +97,18 @@ class Header extends React.Component {
 
   doLogout() {
     this.props.dispatch(logoutUser());
+  }
+
+  changeArrowImg() {
+    this.setState({
+      arrowImg: arrowUnactive
+    })
+  }
+
+  changeArrowImgOut() {
+    this.setState({
+      arrowImg: arrowActive
+    })
   }
 
   // collapse/uncolappse
@@ -160,7 +177,9 @@ class Header extends React.Component {
             style={{ marginRight: 12 }}
           />
         </NavItem>
-        <Form className={`ml-auto d-md-down-none`} inline>
+        <button className={`btn btn-bordered ml-auto ${s.fullVersionBtn}`} onMouseOver={() => this.changeArrowImg()} onMouseLeave={() => this.changeArrowImgOut()}>
+          <a href="https://flatlogic.com/templates/one-react-template/demo" target={"_black"}>Unlock Full Version<img src={this.state.arrowImg} alt="" style={{marginLeft: 14}}/></a></button>
+        <Form className={`d-md-down-none`} inline>
           <InputGroup
             onFocus={this.toggleFocus}
             onBlur={this.toggleFocus}

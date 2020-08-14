@@ -241,3 +241,16 @@
     width: 130px;
   }
 }
+
+.fullVersionBtn {
+  color: #DBDBDB;
+  border: 1px solid theme-color('warning');
+  border-radius: 2px;
+  margin-right: 30px;
+  &:hover {
+    background-color: theme-color('warning');
+    a {
+      color: #fff;
+    }
+  }
+}
