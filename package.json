@@ -59,7 +59,6 @@
     "apexcharts": "^3.10.0",
     "awesome-bootstrap-checkbox": "1.0.1",
     "bootstrap": "4.3.1",
-    "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
     "classnames": "^2.2.6",
     "echarts": "^4.4.0",
     "echarts-for-react": "^2.0.15-beta.1",

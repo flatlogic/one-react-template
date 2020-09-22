@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2]
+
+### Updates
+
+- Removed useless imports
+- Removed bootstrap_calendar dependency
+
 ## [1.0.1]
 
 ### Fixed

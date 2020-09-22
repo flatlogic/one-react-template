@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Collapse, Badge } from "reactstrap";
 import { Route } from "react-router";
 import classnames from "classnames";
-import { connect } from "react-redux";
 
 import caret from '../../../images/caret.svg'
 import activeCaret from '../../../images/caret-active.svg'
