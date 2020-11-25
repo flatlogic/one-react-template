@@ -8,6 +8,7 @@ import { registerUser, registerError } from "../../actions/register";
 import { loginUser } from "../../actions/user";
 import Login from "../login";
 import signupImg from "../../images/signupImg.svg";
+import s from './Register.module.scss';
 
 import img1 from "../../images/Vector-1.svg";
 import img2 from "../../images/Vector-2.svg";
@@ -185,6 +186,7 @@ class Register extends React.Component {
                 Login here
               </Link>
             </div>
+            <footer className={s.footer}>{new Date().getFullYear()} © One React - React Admin Dashboard Template Made by &nbsp;<a href="https://flatlogic.com" rel="noopener noreferrer" target="_blank">Flatlogic LLC</a></footer>
           </form>
         </Widget>
         <img

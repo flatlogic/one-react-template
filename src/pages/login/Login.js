@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Alert, Button, Label, Input, FormGroup } from "reactstrap";
 import Widget from "../../components/Widget";
 import { loginUser } from "../../actions/user";
+import s from './Login.module.scss';
 import signinImg from "../../images/signinImg.svg";
 import img1 from "../../images/Vector-1.svg";
 import img2 from "../../images/Vector-2.svg";
@@ -155,6 +156,7 @@ class Login extends React.Component {
                 Sign Up here
               </Link>
             </div>
+            <footer className={s.footer}>{new Date().getFullYear()} © One React - React Admin Dashboard Template Made by &nbsp;<a href="https://flatlogic.com" rel="noopener noreferrer" target="_blank">Flatlogic LLC</a></footer>
           </form>
         </Widget>
         <img src={signinImg} alt="signin" className={"backImg"} />
