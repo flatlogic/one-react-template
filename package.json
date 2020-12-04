@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "PUBLIC_URL='./' node scripts/build.js",
+    "build": "cross-env PUBLIC_URL='./' node scripts/build.js",
     "start": "node scripts/start.js",
     "test": "node scripts/test.js"
   },
@@ -102,6 +102,7 @@
     "bundle-loader": "0.5.6",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "chalk": "2.4.2",
+    "cross-env": "^7.0.3",
     "css-loader": "2.1.1",
     "dotenv": "8.0.0",
     "dotenv-expand": "5.1.0",

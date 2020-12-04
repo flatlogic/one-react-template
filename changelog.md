@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.4]
+
+### Updates
+
+- Added cross-env module
+
 ## [1.0.3]
 
 ### Updates
