@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row } from "reactstrap";
 import Widget from "../../components/Widget";
+import Footer from "../../components/Footer/Footer";
 
 const Typography = () => {
   return (
@@ -66,6 +67,7 @@ const Typography = () => {
           </Widget>
         </Col>
       </Row>
+      <Footer/>
     </div>
   );
 };

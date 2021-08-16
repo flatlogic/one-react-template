@@ -38,6 +38,7 @@ import uiLight from '../../images/icons/ui elements_outlined.svg'
 import uiDark from '../../images/icons/ui elements_filled.svg'
 
 import s from './Icons.module.scss';
+import Footer from "../../components/Footer/Footer";
 
 class Icons extends React.Component {
   constructor(props) {
@@ -4236,6 +4237,7 @@ class Icons extends React.Component {
             </div>
           </TabPane>
         </TabContent>
+        <Footer/>
       </section>
     );
   }

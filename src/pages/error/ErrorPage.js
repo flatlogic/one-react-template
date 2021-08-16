@@ -3,6 +3,7 @@ import { Container } from "reactstrap";
 
 import s from "./ErrorPage.module.scss";
 import errorImg from "../../images/error-page-img.svg";
+import Footer from "../../components/Footer/Footer";
 
 class ErrorPage extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class ErrorPage extends React.Component {
             <p className={s.errorHelp}>You can back or use our Help Center</p>
           </div>
         </Container>
+        <Footer/>
       </div>
     );
   }

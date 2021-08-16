@@ -1,6 +1,6 @@
 {
   "name": "one-react-template",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "scripts": {
     "build": "cross-env PUBLIC_URL='./' node scripts/build.js",
@@ -56,7 +56,7 @@
     "@amcharts/amcharts4": "^4.10.18",
     "@amcharts/amcharts4-geodata": "^4.1.20",
     "animate.css": "4.1.1",
-    "apexcharts": "^3.26.3",
+    "apexcharts": "^3.27.3",
     "awesome-bootstrap-checkbox": "1.0.1",
     "bootstrap": "4.6.0",
     "classnames": "^2.3.1",

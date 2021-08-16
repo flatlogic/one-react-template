@@ -11,7 +11,7 @@ import s from './Charts.module.scss';
 import {chartData} from './mock';
 
 import ReactEchartsCore from 'echarts-for-react/lib/core';
- 
+
 import echarts from 'echarts/lib/echarts';
 
 import 'echarts/lib/chart/line';
@@ -19,6 +19,7 @@ import 'echarts/lib/chart/pie';
 import 'echarts/lib/chart/themeRiver';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/legend';
+import Footer from "../../components/Footer/Footer";
 
 class Charts extends React.Component {
 
@@ -41,9 +42,9 @@ class Charts extends React.Component {
                 title={<p style={{ fontWeight: 700 }}>Apex</p>}
                 customDropDown
               >
-                <ApexChart 
+                <ApexChart
                   className="sparkline-chart"
-                  height={350} 
+                  height={350}
                   series={cd.apex.column.series}
                   options={cd.apex.column.options}
                   type={"bar"}
@@ -70,10 +71,11 @@ class Charts extends React.Component {
                     title={<p style={{ fontWeight: 700 }}>Apex <span className="fw-semi-bold">Monochrome Pie</span></p>}
                     customDropDown
                   >
-                    <ApexChart 
+                    <ApexChart
                       className="sparkline-chart"
-                      type={"pie"} 
-                      height={200} 
+                      //style={{color: "white"}}
+                      type={"pie"}
+                      height={200}
                       series={cd.apex.pie.series}
                       options={cd.apex.pie.options}
                     />
@@ -108,6 +110,7 @@ class Charts extends React.Component {
               </Widget>
             </Col>
           </Row>
+          <Footer/>
         </div>
       </div>
     );

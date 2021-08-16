@@ -77,8 +77,8 @@
     .input-group-prepend {
       background-color: #1E1E1E;
       transition: background-color ease-in-out 0.15s;
-      border-top-right-radius: 6px;
-      border-bottom-right-radius: 6px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -214,11 +214,17 @@
 .headerSearchInput {
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
+  color: #ffffff;
   &::placeholder {
-    color: rgba(#DBDBDB, .5)
+    //color: rgba(#DBDBDB, .5)
+    color: #fff;
   }
   &Light {
-    color: rgba(#6B6B6B, .5)
+    //color: rgba(#6B6B6B, .5)
+    color: #000;
+  }
+  &Light::placeholder {
+    color: #000;
   }
 }
 

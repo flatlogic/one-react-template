@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.6]
+
+### Updates
+
+- Changed Logo Of Template;
+- Updated styles of Tables;
+- Updated Charts;
+- Updated styles of badges and buttons
+- Updated styles of Notification
+- Add Footer
+- Updated Search Input
+- Updated styles of Icons, add hover effect to Flatlogic One Icons
+
 ## [1.0.5]
 
 ### Updates

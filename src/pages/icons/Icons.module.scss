@@ -16,9 +16,14 @@
         text-decoration: none;
       }
 
+      img:hover {
+        transform: scale(1.5);
+      }
+
       .glyphicon,
       .fa,
-      .fi {
+      .fi,
+       {
         width: 32px;
         margin-right: 10px;
       }
@@ -26,7 +31,8 @@
       &:hover {
         .glyphicon,
         .fa,
-        .fi {
+        .fi,
+        {
           font-size: 28px;
           top: 2px;
         }
