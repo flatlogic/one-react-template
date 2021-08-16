@@ -177,13 +177,13 @@ class Header extends React.Component {
             style={{ marginRight: 12 }}
           />
         </NavItem>
-        <button className={`btn btn-bordered ml-auto d-md-down-none ${s.fullVersionBtn}`} onMouseOver={() => this.changeArrowImg()} onMouseLeave={() => this.changeArrowImgOut()}>
+        <button className={`btn btn-bordered ml-auto justify-content-end d-md-down-none ${s.fullVersionBtn}`} onMouseOver={() => this.changeArrowImg()} onMouseLeave={() => this.changeArrowImgOut()}>
           <a href="https://flatlogic.com/templates/one-react-template/demo" target={"_black"}>Unlock Full Version<img src={this.state.arrowImg} alt="" style={{marginLeft: 14, verticalAlign: "middle"}}/></a></button>
-        <Form className={`d-none d-sm-block ml-auto`} inline>
+        <Form className={`d-none d-sm-block`} inline>
           <InputGroup
             onFocus={this.toggleFocus}
             onBlur={this.toggleFocus}
-            className={`${cx("input-group-no-border", "w-100", { focus: !!focus })}`}
+            className={`${cx("input-group-no-border", "w-100", "ml-auto", { focus: !!focus })}`}
           >
             <InputGroupAddon addonType={"prepend"}>
               <img
@@ -191,7 +191,7 @@ class Header extends React.Component {
                 alt="search"
                 width="24px"
                 height="23px"
-                // style={{ marginRight: 12 }}
+                className="justify-content-center"
               />
             </InputGroupAddon>
             <Input
