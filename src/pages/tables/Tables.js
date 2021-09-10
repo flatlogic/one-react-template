@@ -302,7 +302,7 @@ class Tables extends React.Component {
                       <td>Mark</td>
                       <td>Otto</td>
                       <td>
-                        <span className="badge bg-success badge-pill">Online</span>
+                        <span className="badge bg-success badge-pill text-white">Online</span>
                       </td>
                     </tr>
                     <tr>
@@ -321,7 +321,7 @@ class Tables extends React.Component {
                       </td>
                       <td>
                         Jacob{" "}
-                        <Badge color="warning" className="text-gray-dark">
+                        <Badge color="warning" className="text-white">
                           ALERT!
                         </Badge>
                       </td>

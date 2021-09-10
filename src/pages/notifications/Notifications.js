@@ -46,7 +46,7 @@ class Notifications extends React.Component {
   addInfoNotification = () => {
     let id = uuid();
     toast.info(
-        <div>
+        <div style={{background: "red"}}>
           Launching thermonuclear war...
           <Button onClick={() => this.launchNotification(id)} outline color="default" size="xs" className="mb-xs mr-xs mt-1">Cancel launch</Button>
         </div>,

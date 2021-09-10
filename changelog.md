@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.7]
+
+### Updates
+
+- Updated styles of tables
+- Updated styles of badges and buttons
+- Updated search input
+- Updated style position of Icons
+
 ## [1.0.6]
 
 ### Updates
