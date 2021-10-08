@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import uuid from 'uuid/v4'
 import Widget from '../../components/Widget';
 import s from './Notifications.module.scss';
+import Footer from "../../components/Footer/Footer";
 
 class Notifications extends React.Component {
 
@@ -45,7 +46,7 @@ class Notifications extends React.Component {
   addInfoNotification = () => {
     let id = uuid();
     toast.info(
-        <div>
+        <div style={{background: "red"}}>
           Launching thermonuclear war...
           <Button onClick={() => this.launchNotification(id)} outline color="default" size="xs" className="mb-xs mr-xs mt-1">Cancel launch</Button>
         </div>,
@@ -115,15 +116,12 @@ class Notifications extends React.Component {
 
               <Col lg="4" xs="12">
                 <h5 className="m-t-1">Notification Types</h5>
-                <p>Different types of notifications for lost of use cases. Custom classes are also
-                  supported.</p>
-                <p><Button color="info" id="show-info-message" onClick={this.addInfoNotification}>Info
-                  Message</Button></p>
-                <p><Button color="danger" id="show-error-message" onClick={this.addErrorNotification}>Error Message</Button></p>
+                <p>Different types of notifications for lost of use cases. Custom classes are also supported.</p>
+                <p><Button color="info" id="show-info-message" style={{background: '#17a2b8'}} className="text-uppercase" onClick={this.addInfoNotification}>Info Message</Button></p>
+                <p><Button color="danger" style={{background: '#fd5f00'}} id="show-error-message" className="text-uppercase" onClick={this.addErrorNotification}>Error Message</Button></p>
                 <p><Button
-                    color="success" id="show-success-message" onClick={this.addSuccessNotification}
-                >Success
-                  Message</Button></p>
+                    color="success" style={{background: '#68ca66'}} id="show-success-message" className="text-uppercase" onClick={this.addSuccessNotification}
+                >Success Message</Button></p>
               </Col>
 
               <Col lg="4" xs="12">
@@ -139,6 +137,7 @@ class Notifications extends React.Component {
               </Col>
             </Row>
           </Widget>
+          <Footer/>
         </div>
     );
   }

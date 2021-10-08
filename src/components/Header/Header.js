@@ -69,7 +69,8 @@ class Header extends React.Component {
       showNewMessage: false,
       hideMessage: true,
       run: true,
-      arrowImg: arrowActive
+      arrowImg: arrowActive,
+      color: "#323232",
     };
   }
 
@@ -144,7 +145,7 @@ class Header extends React.Component {
     });
   }
   render() {
-    const { focus } = this.state;
+    const { focus, color } = this.state;
     const { openUsersList } = this.props;
 
     const user = JSON.parse(localStorage.getItem("user") || '{}');
@@ -168,38 +169,39 @@ class Header extends React.Component {
             />
           </NavLink>
         </NavItem>
-        <NavItem className={"d-md-down-block d-md-none ml-auto"}>
+        <NavItem className={"d-block d-sm-none mr-auto"}>
           <img
             src={search}
             alt="search"
             width="24px"
             height="23px"
-            style={{ marginRight: 12 }}
+            style={{ marginLeft: 10 }}
           />
         </NavItem>
-        <button className={`btn btn-bordered ml-auto ${s.fullVersionBtn}`} onMouseOver={() => this.changeArrowImg()} onMouseLeave={() => this.changeArrowImgOut()}>
-          <a href="https://flatlogic.com/templates/one-react-template/demo" target={"_black"}>Unlock Full Version<img src={this.state.arrowImg} alt="" style={{marginLeft: 14}}/></a></button>
-        <Form className={`d-md-down-none`} inline>
+        <button className={`btn btn-bordered ml-auto justify-content-end d-md-down-none ${s.fullVersionBtn}`} onMouseOver={() => this.changeArrowImg()} onMouseLeave={() => this.changeArrowImgOut()}>
+          <a href="https://flatlogic.com/templates/one-react-template/demo" target={"_black"}>Unlock Full Version<img src={this.state.arrowImg} alt="" style={{marginLeft: 14, verticalAlign: "middle"}}/></a></button>
+        <Form className={`d-none d-sm-block`} inline>
           <InputGroup
             onFocus={this.toggleFocus}
             onBlur={this.toggleFocus}
-            className={`${cx("input-group-no-border", { focus: !!focus })}`}
+            className={`${cx("input-group-no-border", "w-100", "ml-auto", { focus: !!focus })}`}
           >
-            <Input
-              id="search-input"
-              placeholder="Search"
-              className={`${cx({ focus: !!focus})} ${s.headerSearchInput}`}
-              style={{ borderBottomLeftRadius: 4, borderTopLeftRadius: 4 }}
-            />
             <InputGroupAddon addonType={"prepend"}>
               <img
                 src={search}
                 alt="search"
                 width="24px"
                 height="23px"
-                style={{ marginRight: 12 }}
+                className="justify-content-center"
+                style={{ opacity: '.5'}}
               />
             </InputGroupAddon>
+            <Input
+                id="search-input"
+                placeholder="Search"
+                className={`${cx({ focus: !!focus, [s.headerSearchInput]: color === '#323232', [s.headerSearchInputLight]: color === '#FFFFFF'})}`}
+                //style={{ borderBottomLeftRadius: 4, borderTopLeftRadius: 4}}
+            />
           </InputGroup>
         </Form>
         <Nav>

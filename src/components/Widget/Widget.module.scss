@@ -20,7 +20,7 @@
 .widgetBackground {
   position: fixed;
   display: none;
-  top: 0px;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -33,11 +33,11 @@
 :global .fullscreened{
   position: fixed!important;
   top: 50%;
-  right: 0px;
-  bottom: 0px;
+  right: 0;
+  bottom: 0;
   height: 60vh;
   left: 50%;
-  margin: 0px;
+  margin: 0;
   z-index: 10000;
   transform: translate(-50%, -50%)!important;
 }
@@ -47,10 +47,10 @@
     position: fixed!important;
     top: 50%;
     height: 70vh;
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
     left: 50%;
-    margin: 0px;
+    margin: 0;
     z-index: 10000;
     transform: translate(-50%, -50%)!important;
   }
@@ -62,10 +62,10 @@
     top: 50%;
     height: 90vh;
     width: 90vw;
-    right: 0px;
-    bottom: 0px;
+    right: 0;
+    bottom: 0;
     left: 50%;
-    margin: 0px;
+    margin: 0;
     z-index: 10000;
     transform: translate(-50%, -50%)!important;
   }
@@ -93,6 +93,7 @@
   background: $widget-bg-color;
   border-radius: $widget-border-radius;
   box-shadow: var(--widget-shadow);
+  padding: $widget-padding;
 
   > header {
     transition: padding .3s linear;

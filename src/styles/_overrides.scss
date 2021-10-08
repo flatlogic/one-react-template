@@ -125,9 +125,12 @@ legend {
 /*  Badge */
 // Add colors for badges
 .badge {
-  padding: 4px;
+  display: inline-block;
+  line-height: $line-height-sm;
+  text-shadow: none;
+  padding: 4px 8px;
   font-weight: $font-weight-bold;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .badge-success,
@@ -790,7 +793,7 @@ pre {
 
 //// React Joyride Shadow fix ////
 .__floater {
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 10px) !important;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1)) !important;
 }
 
 .table-striped {
@@ -835,4 +838,5 @@ pre {
 .sparkline-chart {
   min-height: 50px !important;
   margin: 0 auto;
+  color: #fff !important;
 }

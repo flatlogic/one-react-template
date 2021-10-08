@@ -18,7 +18,7 @@ import lightUI from "../../images/ui-elements.svg";
 import darkUI from "../../images/ui-elements-dark.svg";
 import lightTypography from "../../images/Typography.svg";
 import darkTypography from "../../images/Typography-dark.svg";
-import logo from "../../images/logo.svg";
+import logo1 from "../../images/logo1.svg";
 import settingsIcon from "../../images/settings.svg";
 import logoutIcon from "../../images/logout.svg";
 import accountIcon from "../../images/account.svg";
@@ -59,7 +59,7 @@ class Sidebar extends React.Component {
         <div className={`${(!this.props.sidebarOpened && !this.props.sidebarStatic ) ? s.sidebarClose : ''} ${s.sidebarWrapper}`} id={"sidebar-drawer"}>
         <nav className={s.root}>
           <header className={s.logo}>
-            <img src={logo} alt="logo" className={s.logoStyle} />
+            <img src={logo1} alt="logo" className={s.logoStyle} />
             <span>Flatlogic&nbsp;</span> One
           </header>
           <h5 className={s.navTitle}>APP</h5>

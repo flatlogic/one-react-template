@@ -8,6 +8,7 @@ import {
 } from "react-google-maps";
 
 import Widget from "../../components/Widget";
+import Footer from "../../components/Footer/Footer";
 
 const BasicMap = withScriptjs(
   withGoogleMap(() => (
@@ -51,6 +52,7 @@ class Maps extends React.Component {
             </Widget>
           </Col>
         </Row>
+        <Footer/>
       </div>
     );
   }

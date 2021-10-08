@@ -17,6 +17,7 @@ import { Sparklines, SparklinesBars } from "react-sparklines";
 
 import Widget from "../../components/Widget";
 import s from "./Tables.modules.scss";
+import Footer from "../../components/Footer/Footer";
 
 class Tables extends React.Component {
   constructor(props) {
@@ -150,7 +151,8 @@ class Tables extends React.Component {
               title={<p style={{ fontWeight: 700 }}>Table Styles</p>}
               customDropDown
             >
-              <Table responsive>
+            <div className="table-responsive">
+              <Table>
                 <thead>
                   <tr className="fs-sm">
                     <th className="hidden-sm-down">#</th>
@@ -160,7 +162,6 @@ class Tables extends React.Component {
                     <th className="hidden-sm-down">Date</th>
                     <th className="hidden-sm-down">Size</th>
                     <th className="hidden-sm-down">Status</th>
-                    <th />
                   </tr>
                 </thead>
                 <tbody>
@@ -218,14 +219,15 @@ class Tables extends React.Component {
                   ))}
                 </tbody>
               </Table>
+            </div>
               <div className="clearfix">
                 <div className="float-right">
-                  <Button color={"warning"} className="mr-xs" size="sm">
+                  <Button color={"warning"} className="mr-4 text-uppercase" size="sm">
                     Send to...
                   </Button>
                   <UncontrolledButtonDropdown>
                     <DropdownToggle
-                      className="mr-xs"
+                      className="mr-xs text-uppercase"
                       size="sm"
                       caret
                       color={"default"}
@@ -260,95 +262,97 @@ class Tables extends React.Component {
                 Each row is highlighted. You will never lost there. Just{" "}
                 <code>.table-striped</code> it.
               </p>
-              <Table className="table-striped">
-                <thead>
-                  <tr>
-                    <th>
-                      <div className="abc-checkbox">
-                        <Input
-                          id="checkbox1"
-                          type="checkbox"
-                          checked={this.state.checkboxes1[0]}
-                          onChange={event =>
-                            this.checkAll(event, "checkboxes1")
-                          }
-                        />
-                        <Label for="checkbox1" />
-                      </div>
-                    </th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Info</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div className="abc-checkbox">
-                        <Input
-                          id="checkbox2"
-                          type="checkbox"
-                          checked={this.state.checkboxes1[1]}
-                          onChange={event =>
-                            this.changeCheck(event, "checkboxes1", 1)
-                          }
-                        />
-                        <Label for="checkbox2" />
-                      </div>
-                    </td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>
-                      <Badge color="success">Online</Badge>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="abc-checkbox">
-                        <Input
-                          id="checkbox3"
-                          type="checkbox"
-                          checked={this.state.checkboxes1[2]}
-                          onChange={event =>
-                            this.changeCheck(event, "checkboxes1", 2)
-                          }
-                        />
-                        <Label for="checkbox3" />
-                      </div>
-                    </td>
-                    <td>
-                      Jacob{" "}
-                      <Badge color="warning" className="text-gray-dark">
-                        ALERT!
-                      </Badge>
-                    </td>
-                    <td>Thornton</td>
-                    <td>
-                      <span className="badge bg-gray text-white">Away</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="abc-checkbox">
-                        <Input
-                          id="checkbox4"
-                          type="checkbox"
-                          checked={this.state.checkboxes1[3]}
-                          onChange={event =>
-                            this.changeCheck(event, "checkboxes1", 3)
-                          }
-                        />
-                        <Label for="checkbox4" />
-                      </div>
-                    </td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>
-                      <Badge color="danger">Construct</Badge>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
+              <div className="table-responsive">
+                <Table className="table-striped">
+                  <thead>
+                    <tr>
+                      <th>
+                        <div className="abc-checkbox">
+                          <Input
+                            id="checkbox1"
+                            type="checkbox"
+                            checked={this.state.checkboxes1[0]}
+                            onChange={event =>
+                              this.checkAll(event, "checkboxes1")
+                            }
+                          />
+                          <Label for="checkbox1" />
+                        </div>
+                      </th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Info</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div className="abc-checkbox">
+                          <Input
+                            id="checkbox2"
+                            type="checkbox"
+                            checked={this.state.checkboxes1[1]}
+                            onChange={event =>
+                              this.changeCheck(event, "checkboxes1", 1)
+                            }
+                          />
+                          <Label for="checkbox2" />
+                        </div>
+                      </td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>
+                        <span className="badge bg-success badge-pill text-white">Online</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="abc-checkbox">
+                          <Input
+                            id="checkbox3"
+                            type="checkbox"
+                            checked={this.state.checkboxes1[2]}
+                            onChange={event =>
+                              this.changeCheck(event, "checkboxes1", 2)
+                            }
+                          />
+                          <Label for="checkbox3" />
+                        </div>
+                      </td>
+                      <td>
+                        Jacob{" "}
+                        <Badge color="warning" className="text-white">
+                          ALERT!
+                        </Badge>
+                      </td>
+                      <td>Thornton</td>
+                      <td>
+                        <span className="badge bg-gray badge-pill text-white">Away</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="abc-checkbox">
+                          <Input
+                            id="checkbox4"
+                            type="checkbox"
+                            checked={this.state.checkboxes1[3]}
+                            onChange={event =>
+                              this.changeCheck(event, "checkboxes1", 3)
+                            }
+                          />
+                          <Label for="checkbox4" />
+                        </div>
+                      </td>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>
+                        <span className="badge bg-danger badge-pill text-white">Construct</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </div>
               <br />
               <br />
               <h3>
@@ -379,9 +383,12 @@ class Tables extends React.Component {
                         <a href="#">ottoto@example.com</a>
                       </td>
                       <td>
-                        <Badge color="gray" className="text-gray" pill>
+                        {/*<Badge color="success" className="text-gray p-2" pill>*/}
+                        {/*  Pending*/}
+                        {/*</Badge>*/}
+                        <span className="badge bg-success">
                           Pending
-                        </Badge>
+                        </span>
                       </td>
                     </tr>
                     <tr>
@@ -392,9 +399,9 @@ class Tables extends React.Component {
                         <a href="#">fat.thor@example.com</a>
                       </td>
                       <td>
-                        <Badge color="gray" className="text-gray-light" pill>
+                        <span className="badge bg-danger">
                           Unconfirmed
-                        </Badge>
+                        </span>
                       </td>
                     </tr>
                     <tr>
@@ -405,9 +412,9 @@ class Tables extends React.Component {
                         <a href="#">larry@example.com</a>
                       </td>
                       <td>
-                        <Badge color="gray" className="text-gray" pill>
+                        <span className="badge bg-warning">
                           New
-                        </Badge>
+                        </span>
                       </td>
                     </tr>
                     <tr>
@@ -418,9 +425,7 @@ class Tables extends React.Component {
                         <a href="#">peter@example.com</a>
                       </td>
                       <td>
-                        <Badge color="gray" className="text-gray-light" pill>
-                          Active
-                        </Badge>
+                        <span className="badge bg-primary">Active</span>
                       </td>
                     </tr>
                   </tbody>
@@ -443,6 +448,7 @@ class Tables extends React.Component {
                 add
                 <code>.table-bordered</code> to it.
               </p>
+              <div className="table-responsive">
               <Table className="table-bordered table-lg mt-lg mb-0">
                 <thead>
                   <tr>
@@ -602,6 +608,7 @@ class Tables extends React.Component {
                   </tr>
                 </tbody>
               </Table>
+              </div>
             </Widget>
             <Widget
               title={<p style={{ fontWeight: 700 }}>Table Styles</p>}
@@ -780,6 +787,7 @@ class Tables extends React.Component {
             </Widget>
           </Col>
         </Row>
+        <Footer/>
       </div>
     );
   }

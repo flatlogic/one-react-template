@@ -1,7 +1,7 @@
 import config from './config';
 
 const colors = config.app.colors;
-const { warning } = colors;
+const { warning} = colors;
 const chartColors = config.app.chartColors;
 const {axisColor} = chartColors;
 
@@ -54,31 +54,75 @@ export const chartData = {
       }
     },
     pie: {
-      series: [25, 15, 44, 55, 41, 17],
+      series: [25, 15, 44, 55, 41, 17, 31],
       options: {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        label: {
+          show: true,
+          style: {
+            colors: ["#a8a8a8"],
+            fontSize: "11px",
+            fontFamily: 'Arial'
+          }
+        },
         theme: {
           monochrome: {
             enabled: true,
-            color: warning,
+            color: warning
           }
         },
-        stroke: {
-          show: false,
-          width: 0
-        },
-        legend: false,
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: 'bottom'
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              offset: -7
             }
           }
-        }]
+        },
+        dataLabels: {
+          style: {
+            fontSize: '13px',
+            fontFamily: 'Helvetica, Arial, sans-serif',
+            fontWeight: 'bold'
+          },
+          formatter(val) {
+            return [val.toFixed(1) + '%']
+          }
+        },
+        legend: {
+          show: false
+        }
+        // dataLabels: {
+        //   enabled: false,
+        //   textAnchor: 'middle',
+        //   offsetX: 0,
+        //   offsetY: 0,
+        //   style: {
+        //     fontSize: '14px',
+        //     fontFamily: 'Helvetica, Arial, sans-serif',
+        //     fontWeight: 'bold',
+        //     colors: '#fff'
+        //   },
+        //   formatter(val, opts) {
+        //     const name = opts.w.globals.labels[opts.seriesIndex]
+        //     return [name, val.toFixed(1) + '%']
+        //   }
+        // },
+        // stroke: {
+        //   show: false,
+        //   width: 0
+        // },
+        // legend: false,
+        // responsive: [{
+        //   breakpoint: 480,
+        //   options: {
+        //     chart: {
+        //       width: 200
+        //     },
+        //     legend: {
+        //       position: 'bottom'
+        //     }
+        //   }
+        // }]
       }
     }
   },
