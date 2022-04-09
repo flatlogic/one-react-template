@@ -65,7 +65,7 @@
     "font-awesome": "4.7.0",
     "glyphicons-halflings": "^1.9.1",
     "line-awesome": "github:icons8/line-awesome",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "rc-hammerjs": "^0.6.10",
     "react": "^16.14.0",
     "react-animate-height": "^2.0.23",
