@@ -54,6 +54,7 @@ npm install
 ```shell
 yarn
 ```
+If you encounter problems use `yarn install --ignore-optional`
 
 ## Quick start
 Run development server

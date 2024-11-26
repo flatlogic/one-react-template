@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.7] - 26/11/2024
+
+- Updated dependencies
+- Fix scripts
+
 ## [1.0.6] - 22/12/2023
 
 - Updated dependencies
