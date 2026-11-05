@@ -101,3 +101,8 @@ contract absent from the routed layout; this is replaced by the browser test.
 
 Unused amCharts/Rickshaw dependencies had no imports anywhere in source or styles
 and are removed; the dashboard uses its existing ApexCharts components.
+
+
+### Published demo
+
+`docs/` contains the verified production build with relative asset URLs. Refresh its generated assets from `build/` after `npm run build`, preserving deployment metadata. `PLAYWRIGHT_DOCS=1 npm test` serves that directory under `/one-react-template/` and checks its navigation and assets. `node --test tests/service-worker-cleanup.unit.mjs` verifies cache isolation. The retirement service worker removes cached responses only within its app scope and unregisters itself; other apps on the same origin keep their responses.
