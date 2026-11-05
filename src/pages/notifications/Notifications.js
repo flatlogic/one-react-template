@@ -5,7 +5,7 @@ import {
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 import Widget from '../../components/Widget';
 import s from './Notifications.module.scss';
 
