@@ -35,3 +35,5 @@ packages/react-devtools-shell/dist
 
 test-results/
 playwright-report/
+
+build/
