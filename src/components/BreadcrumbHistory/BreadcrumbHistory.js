@@ -10,7 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import uuid from "uuid/v4";
+import { v4 as uuid } from 'uuid';
 import s from "./BreadcrumbHistory.module.scss";
 
 class BreadcrumbHistory extends Component {

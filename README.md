@@ -88,3 +88,16 @@ Looking for premium themes and templates? Check out our other template at [flatl
 Flatlogic One React Template version is [MIT](https://github.com/flatlogic/one-react-template/blob/master/LICENCE)-licensed.
 
 * that's a joke actually, but we would really appreciate if you support us by buying a premium version. Anyways free is just free and is limited to only few components, while premium one has more and comes with premium support.
+
+## Maintained dependency workflow
+
+Use Node >=22.12 and npm (`npm ci`, `npm start`, `npm run build`). Vite replaces
+the vulnerable ejected Webpack/CRA toolchain while preserving React16, Router4,
+SCSS and the dashboard. `package-lock.json` is canonical after a clean full
+`npm audit`; the superseded Yarn lock is removed. `npm test` checks the production
+build in installed Chrome: login, charts, tables, typography, and logout.
+The former Layout test referenced undeclared Enzyme/Chai and a child-rendering
+contract absent from the routed layout; this is replaced by the browser test.
+
+Unused amCharts/Rickshaw dependencies had no imports anywhere in source or styles
+and are removed; the dashboard uses its existing ApexCharts components.
